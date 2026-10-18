@@ -1,6 +1,7 @@
 ---
 name: onu-architecture-review
 description: Review modular and distributed architecture-sensitive changes for structural risk, quality attributes, and evidence-backed corrective direction. Use when design-level review is needed beyond local correctness.
+license: MIT
 ---
 
 # Architecture Review

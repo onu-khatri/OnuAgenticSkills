@@ -1,8 +1,9 @@
 ---
 name: onu-frontend-implementer
-description: Single-lane frontend implementer for React/TypeScript features, forms, routes, typed client data, and focused verification.
+description: Implement frontend work — React/TypeScript features, forms, routes, and typed client data — with focused verification as a single lane. Use when a bounded frontend slice is assigned for implementation.
 reasoningEffort: medium
 sandboxMode: workspace-write
+mode: subagent
 ---
 
 ## Mission and lane
@@ -55,6 +56,13 @@ If implementation reveals a contract, requirement, plan, or ownership conflict, 
 Definition of Done:
 - Run the smallest proportionate checks from the frontend client project and report exactly what ran and what did not.
 - Do not claim `npm run check`, `npm run test`, or `npm run build` passed unless you ran it.
+- Append this slice's evidence — files changed, commands run, actual results —
+  to the plan's post-plan evidence file as part of "done when", not at the end
+  of the whole change.
+- Before handoff, self-check the shippable traps: `.gitignore` does not swallow
+  needed artifacts; the CI lint/typecheck/build passes in the hosted pipeline;
+  the app actually serves in the dev/build runtime (not just compiles); no
+  secrets or `.env` files are staged.
 
 ## Handoff
 

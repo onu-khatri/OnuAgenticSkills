@@ -1,6 +1,7 @@
 ---
 name: onu-openspec-orchestration
-description: 'Orchestrates OpenSpec spec-driven development with GitHub. Use when a GitHub issue, repository task, pull request, review thread, or requested code change should be driven through the appropriate OpenSpec skills automatically from discovery and proposal through implementation, verification, spec sync, archiving, and pull-request handling. Resumes safely from existing OpenSpec, branch, issue, PR, and CI state instead of duplicating work.'
+description: Orchestrate OpenSpec spec-driven development with GitHub, resuming safely from existing OpenSpec, branch, issue, PR, and CI state. Use when a GitHub issue, repository task, pull request, review thread, or code change should flow through the OpenSpec skills from proposal to PR handling.
+license: MIT
 ---
 
 # OpenSpec GitHub Orchestrator

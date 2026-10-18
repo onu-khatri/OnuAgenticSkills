@@ -1,6 +1,7 @@
 ---
 name: onu-delivery-pull-request
-description: Raise high-quality pull requests in the target project from the current worktree with safe branch, commit, push, hosted-PR, story-traceability, and verification gates. Use when Codex needs to finish delivery, not only draft PR text.
+description: Raise high-quality pull requests from the current worktree with safe branch, commit, push, and verification gates. Use when finishing delivery into a hosted PR.
+license: MIT
 ---
 
 # PR Creator

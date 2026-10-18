@@ -1,6 +1,7 @@
 ---
 name: onu-documentation-excalidraw-diagrams
-description: Generate clear architecture and workflow diagrams for the target project that can be rendered in Excalidraw or translated into diagram assets later. Use when Codex needs to visualize modules, flows, integrations, or story delivery plans.
+description: Generate architecture and workflow diagrams that render in Excalidraw or translate into diagram assets later. Use when visualizing modules, flows, integrations, or story delivery plans.
+license: MIT
 ---
 
 # Excalidraw Diagram Generator

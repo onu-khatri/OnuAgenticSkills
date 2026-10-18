@@ -1,6 +1,7 @@
 ---
 name: onu-research-deep
-description: Perform decision-focused, evidence-based research for the target project across requirements, user needs, code, tests, and external sources. Use when significant ambiguity or cross-cutting impact requires reliable findings before implementation, architecture, or planning.
+description: Perform decision-focused, evidence-based research across requirements, user needs, code, tests, and external sources. Use when significant ambiguity or cross-cutting impact requires reliable findings before implementation.
+license: MIT
 ---
 
 # Deep Research

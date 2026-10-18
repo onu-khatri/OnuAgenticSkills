@@ -1,6 +1,7 @@
 ---
 name: onu-backend-dotnet-architecture
 description: Design .NET backend and modular-application architecture with explicit ownership, dependency, composition, integration, and verification decisions. Use when a change needs architecture judgment before implementation.
+license: MIT
 ---
 
 # .NET Backend Architecture

@@ -1,13 +1,14 @@
 ---
 name: onu-agent-name-picker
-description: 'Assign fun identity names to agents and subagents from famous characters and actors (Mahabharat, Ramayan, Hollywood, Bollywood, The Boys, Marvel, Raj Comics, DC), keeping one origin per session and never reusing a name that is active. Use when a session wants a themed identity, or when asked about an agent name.'
+description: Assign themed identity names to agents and subagents from famous characters and actors (Mahabharat, Ramayan, Hollywood, Bollywood, The Boys, Marvel, Raj Comics, DC), keeping one origin per session and never reusing an active name. Use when a session wants an identity or asks about an agent name.
+license: MIT
 ---
 
 # Agent name picker
 
 Gives agents and subagents a memorable identity from a catalog of famous characters and actors. Names come with lore metadata (`introduction`, `era`, `strengths`, `weakness`, `persona`, `aura`, `category`, `origin`) that the agent weaves into its self-description. The catalog is stored in `scripts/AgentNameCatalog.json`.
 
-## Workflow: propose -> reserve -> release
+## Workflow: propose -> reserve -> resolve -> release
 
 1. **Propose** — get candidate names (default 5) to choose from:
 
@@ -25,11 +26,28 @@ Gives agents and subagents a memorable identity from a catalog of famous charact
 
    This marks the name active (so it will not be proposed again) and locks the session origin.
 
-3. **Release** — free a name when its agent is no longer active:
+3. **Resolve** — after the agent is spawned, compute the chat-visible identity. The
+   `spawn_agent` result's `nickname` is the authoritative chat-visible name; the
+   picker-reserved name is metadata only and the fallback when `nickname` is
+   absent:
+
+   ```
+   pwsh -NoProfile -File scripts/Resolve-AgentIdentity.ps1 -ReservedName "Iron Man" -Nickname "<spawn_agent.result.nickname>" -Format json
+   ```
+
+   The script emits `reserved_name`, `nickname`, and `visible_name`, where
+   `visible_name = nickname ?? reserved_name`. Record both `reserved_name` and
+   `visible_name`; use `visible_name` in every progress update, handoff, status
+   report, and close/release record. Never claim the picker name controls the
+   chat UI unless the spawn tool exposes an explicit display-name parameter.
+
+4. **Release** — free the reserved name when its agent is no longer active:
 
    ```
    pwsh -NoProfile -File scripts/Release-AgentName.ps1 -Name "Iron Man"
    ```
+
+   Release `reserved_name` (not `visible_name`) when the agent closes.
 
 Read the lore for a name:
 
@@ -42,6 +60,7 @@ pwsh -NoProfile -File scripts/Get-AgentNameInfo.ps1 -Name "Iron Man" -Format tex
 - **One origin per session.** The first reservation locks an `origin`; every later proposal/reservation in the same session reuses that origin. A forced `-Origin` on a locked session is ignored with a warning, and reserving a name from a different origin is rejected.
 - **No active-name reuse.** A name in the active registry (`.tmp/agent-names/active.json`) is never proposed or reserved again until released.
 - **No repetition within a session.** Names already assigned in the session are excluded from candidates.
+- **Reserved name is metadata, not the chat identity.** The `spawn_agent` `nickname` is the authoritative chat-visible name; keep the reserved name as `reserved_name` and use `visible_name = nickname ?? reserved_name` for all user-facing output. Release `reserved_name` when the agent closes.
 - State lives under `.tmp/agent-names/`: session state in `sessions/<session-id>.json`, active registry in `active.json`.
 
 ## Responding to identity questions
@@ -60,5 +79,6 @@ Example: "I'm the backend reviewer agent — I analyze .NET diffs for correctnes
 - `scripts/AgentNameState.ps1` — session and active-registry persistence helpers.
 - `scripts/Select-AgentName.ps1` — proposes candidate names.
 - `scripts/Reserve-AgentName.ps1` — reserves a name (marks it active).
+- `scripts/Resolve-AgentIdentity.ps1` — resolves `visible_name` from the `spawn_agent` `nickname` with the reserved name as fallback.
 - `scripts/Release-AgentName.ps1` — releases a name when its agent is done.
 - `scripts/Get-AgentNameInfo.ps1` — returns the lore for a given name.

@@ -1,6 +1,7 @@
 ---
 name: onu-architecture-adr
-description: Write clear architecture decision records for the target project that capture context, options, tradeoffs, status, and consequences in project-specific language. Use when Codex needs to document a meaningful technical decision or proposed architecture change.
+description: Write architecture decision records that capture context, options, tradeoffs, status, and consequences in project-specific language. Use when documenting a meaningful technical decision or proposed architecture change.
+license: MIT
 ---
 
 # Architecture Decision Records

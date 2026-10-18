@@ -1,6 +1,7 @@
 ---
 name: onu-documentation-finder
-description: 'Locate and retrieve knowledge-base artifacts deterministically (index-first, then frontmatter title/scope/audience, then filename) instead of globbing arbitrary folders. Use when any skill or agent needs to find a .knowledge.md topic, ADR, or project authority from the knowledge base.'
+description: Locate and retrieve knowledge-base artifacts deterministically (index-first, then frontmatter title/scope/audience, then filename) instead of globbing arbitrary folders. Use when finding a knowledge topic, ADR, or project authority from the knowledge base.
+license: MIT
 ---
 
 # Documentation finder

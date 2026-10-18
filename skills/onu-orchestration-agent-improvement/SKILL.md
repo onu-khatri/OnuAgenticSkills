@@ -1,6 +1,7 @@
 ---
 name: onu-orchestration-agent-improvement
-description: Diagnose and improve delegation, ownership, checkpoints, and handoffs in existing agent workflows in the target project.
+description: Diagnose and improve delegation, ownership, checkpoints, and handoffs in existing agent workflows. Use when orchestration produces overlap, rework, or missed context.
+license: MIT
 ---
 
 # Agent Orchestration Improver

@@ -8,8 +8,8 @@ import { loadSettings } from './installers/settings.js';
 import { chooseMany, chooseOne, confirm, promptText } from './installers/prompts.js';
 import { fetchRepository } from './installers/source.js';
 import { buildPlan, discoverSkills } from './installers/skills.js';
-import { agentCatalog, buildAgentPlan, discoverAgents, loadAgentFormats } from './installers/agents.js';
-import { instructionTargets, registerAgents as registerAgentsInFiles } from './installers/instructions.js';
+import { agentCatalog, buildAgentPlan, discoverAgents, loadAgentFormats, readInstructionFile } from './installers/agents.js';
+import { instructionTargets, registerAgents as registerAgentsInFiles, registerInstructions } from './installers/instructions.js';
 import { install, printPlan } from './installers/install.js';
 
 const CLIENT_OPTIONS = [
@@ -51,6 +51,13 @@ async function resolveRegisterAgents(args, source, wantAgents) {
   return isInteractive() ? await confirm('Add agent registration to your instruction file?') : false;
 }
 
+async function resolveIncludeInstructions(args, source, wantAgents) {
+  if (!wantAgents) return false;
+  if (args.includeInstructions !== null) return args.includeInstructions;
+  if (source.includeInstructionFile) return true;
+  return isInteractive() ? await confirm('Include the full instruction file (agents/AGENTS.md) in your instruction file?') : false;
+}
+
 function buildAgentInstallation(fetched, source, clients, scope, cwd, wantAgents, modelOverride) {
   if (!wantAgents) return { plan: [], agents: [], formats: null };
   const formats = loadAgentFormats();
@@ -75,6 +82,7 @@ async function main() {
   const wantAgents = await resolveAgents(args);
   const modelOverride = await resolveModel(args, wantAgents);
   const registerAgents = await resolveRegisterAgents(args, source, wantAgents);
+  const includeInstructions = await resolveIncludeInstructions(args, source, wantAgents);
 
   const fetched = fetchRepository(source);
   try {
@@ -94,11 +102,23 @@ async function main() {
 
     install(plan, agentPlan, { dryRun: args.dryRun, source, commit: fetched.commit });
 
-    if (registerAgents && agents.length && formats) {
+    if ((registerAgents || includeInstructions) && agents.length && formats) {
       const targets = instructionTargets(clients, scope, cwd, formats);
-      registerAgentsInFiles(targets, agentCatalog(agents), args.dryRun);
 
-      if (!args.dryRun) {
+      if (registerAgents) {
+        registerAgentsInFiles(targets, agentCatalog(agents), args.dryRun);
+      }
+
+      if (includeInstructions) {
+        const instructionContent = readInstructionFile(fetched.repoDir, source.agentsPath);
+        if (instructionContent) {
+          registerInstructions(targets, instructionContent, args.dryRun);
+        } else if (!args.dryRun) {
+          console.log('Instruction file (agents/AGENTS.md) not found in source; skipped.');
+        }
+      }
+
+      if (registerAgents && !args.dryRun) {
         console.log('\nUsing your own agents? The installed onu-* agents are defaults.');
         console.log('To prefer your own planner, implementation, or review agents, name them in your');
         console.log('project AGENTS.md under "Skill and agent routing" — your explicit');

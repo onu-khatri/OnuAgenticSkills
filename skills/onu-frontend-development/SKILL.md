@@ -1,6 +1,7 @@
 ---
 name: onu-frontend-development
-description: Deliver production-ready React features in the target project with correct routes, typed client data, accessible responsive behavior, and focused verification. Use when building or changing product UI, hooks, forms, or client integration.
+description: Deliver production-ready React features with correct routes, typed client data, accessible responsive behavior, and focused verification. Use when building or changing product UI, hooks, forms, or client integration.
+license: MIT
 ---
 
 # Frontend Developer

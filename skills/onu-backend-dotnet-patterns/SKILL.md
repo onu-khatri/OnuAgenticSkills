@@ -1,6 +1,7 @@
 ---
 name: onu-backend-dotnet-patterns
 description: Apply .NET backend implementation patterns for API boundaries, application behavior, persistence, and testing. Use when a change needs pattern selection or a framework-aware implementation review.
+license: MIT
 ---
 
 # Dotnet Backend Patterns

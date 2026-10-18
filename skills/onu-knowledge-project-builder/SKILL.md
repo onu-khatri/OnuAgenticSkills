@@ -1,6 +1,7 @@
 ---
 name: onu-knowledge-project-builder
-description: Build durable, evidence-grounded knowledge artifacts for the target project through an approval-driven workflow with sequential quality gates A–H, including a mandatory workflow-user-interview gate. Use when an agent needs reusable knowledge about architecture, feature flows, conventions, responsibilities, or requirement-to-implementation traceability.
+description: Build durable, evidence-grounded knowledge artifacts through an approval-driven workflow with sequential quality gates. Use when reusable knowledge is needed about architecture, feature flows, conventions, responsibilities, or traceability.
+license: MIT
 ---
 
 # Project Knowledge Builder

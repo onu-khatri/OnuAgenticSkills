@@ -1,6 +1,7 @@
 ---
 name: onu-backend-feature-development
 description: Implement backend features through explicit requirements, contracts, validation, application behavior, persistence decisions, and targeted tests. Use when a backend change spans more than a local edit.
+license: MIT
 ---
 
 # Backend Feature Development

@@ -1,6 +1,7 @@
 ---
 name: onu-workflow-planning
-description: Write clear, actionable plans for complex work across product, business, research, design, content, operations, and technical domains. Use when sequencing decisions, activities, dependencies, and validation will reduce execution risk.
+description: Write clear, actionable plans for complex work across product, business, research, design, content, operations, and technical domains. Use when sequencing decisions, activities, dependencies, and validation reduces execution risk.
+license: MIT
 ---
 
 # Plan Writing
@@ -65,7 +66,7 @@ Write the plan in small batches and verify rule-by-rule. Read [plan-drafting.md]
 - Write in batches rather than one large write, so a partial failure is recoverable.
 - Draft each item against its governing authority or rule, then re-verify the drafted result.
 - Distinguish illustrative sketches from committed decisions; never leave a material detail as a placeholder.
-- Keep an evidence ledger (source, date/version, observation, interpretation, confidence) so every claim is traceable.
+- Keep an evidence ledger (source, date/version, observation, interpretation, confidence) so every claim is traceable — for non-code work. Code work defers to `$onu-implementation-planning`, which persists evidence in companion files and cites only `file:line` inline.
 
 ## Planning rules
 

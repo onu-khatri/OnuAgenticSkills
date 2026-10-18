@@ -1,6 +1,7 @@
 ---
 name: onu-quality-code-review-fe
-description: 'Composable React/TypeScript frontend code-review capability for production readiness. Use for autonomous review of .ts/.tsx/.jsx/.js/.css changes, or anything touching React components, hooks, state, data fetching, forms, routing, client API integration, accessibility, styling, or frontend performance. Owns frontend methodology only; not for backend, docs, or general clean-code review.'
+description: Review React/TypeScript frontend changes for production readiness. Use for autonomous review of .ts/.tsx/.jsx/.js/.css changes, React components, hooks, state, data fetching, forms, routing, client API integration, accessibility, styling, or performance.
+license: MIT
 ---
 
 # React/TypeScript Frontend Code Review Capability

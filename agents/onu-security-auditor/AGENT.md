@@ -1,8 +1,9 @@
 ---
 name: onu-security-auditor
-description: OWASP-oriented security reviewer for features, APIs, and sensitive flows.
+description: Review features, APIs, and sensitive flows for OWASP-oriented security risks. Use when delegated as a security review lane.
 reasoningEffort: medium
 sandboxMode: read-only
+mode: subagent
 ---
 
 ## Mission and skill routing

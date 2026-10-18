@@ -23,6 +23,7 @@
     "bundle": "node scripts/build-tar.mjs",
     "test:local": "node scripts/test-local-installer.mjs",
     "test:stale": "node scripts/test-stale-cleanup.mjs",
+    "test:agent-names": "pwsh -NoProfile -File skills/onu-agent-name-picker/tests/Test-AgentIdentity.ps1",
     "test:bundle": "node scripts/test-packed-installer.mjs",
     "test": "npm run validate && npm run test:local && npm run test:stale && npm run test:bundle",
     "ci:validate": "npm test",

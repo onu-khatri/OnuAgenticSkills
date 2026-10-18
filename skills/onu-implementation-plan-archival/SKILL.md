@@ -1,9 +1,10 @@
 ---
 name: onu-implementation-plan-archival
-description: Consolidate completed implementation-plan iterations into a traceable permanent history document after implementation and required review/validation are complete.
+description: Consolidate completed implementation-plan iterations into a traceable permanent history document. Use when implementation and required review/validation are complete.
 metadata:
   author: the target project
   version: "1.1"
+license: MIT
 ---
 
 # Implementation Plan Archival

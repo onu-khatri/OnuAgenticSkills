@@ -43,3 +43,7 @@ If non-compliant, state the alternative. Missing evidence → mark BLOCKED. Any 
 For every planned component, list its actions (mutation, I/O, validation, decision) and map each action to the rule that dictates its home. If any action sits where a rule forbids it, move it to the mandated component, creating that component if needed.
 
 Absolute rules: no `file:line` without a logged search; no user interview until reconnaissance is closed; the log is the only proof — if it is not logged, it did not happen.
+
+## Output destination
+
+The seed→question→hits log and rule-to-evidence verification rows are working evidence. Write them to `<PlanningFileName>.pre-plan-evidence.md`; persist only `file:line` citations inline in the plan.

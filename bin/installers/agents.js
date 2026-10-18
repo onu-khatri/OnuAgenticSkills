@@ -28,6 +28,12 @@ export function resolveLocation(location, cwd) {
   return path.resolve(cwd, location);
 }
 
+export function readInstructionFile(repoDir, agentsPath) {
+  const file = path.join(repoDir, agentsPath, 'AGENTS.md');
+  if (!fs.existsSync(file)) return null;
+  return fs.readFileSync(file, 'utf8');
+}
+
 export function agentCatalog(agents) {
   return agents.map((agent) => {
     const raw = fs.readFileSync(path.join(agent.source, 'AGENT.md'), 'utf8');

@@ -1,6 +1,7 @@
 ---
 name: onu-openspec-workflow
-description: Coordinate the OpenSpec proposal, approval, worktree implementation, verification, and closeout in the target project with proposal work in the main checkout and code work isolated to the approved worktree. Also applies the repository-policy overlay to every OpenSpec transition.
+description: Coordinate OpenSpec proposal, approval, worktree implementation, verification, and closeout, with proposal work in the main checkout and code isolated to the approved worktree. Use when coordinating OpenSpec lifecycle transitions.
+license: MIT
 ---
 
 # OpenSpecWorkflow

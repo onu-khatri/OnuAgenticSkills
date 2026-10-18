@@ -1,6 +1,7 @@
 ---
 name: onu-quality-code-review
-description: 'Orchestrate an autonomous production-readiness code review end to end: resolve the review target and comparison range, select review capabilities, drive plan approval, delegate bounded sub-reviews, synthesize findings, and emit the final verdict. Composes capability skills such as $onu-quality-code-review-be, which own the per-language/domain review methodology.'
+description: Orchestrate an autonomous production-readiness code review end to end, from resolving the review target through delegated sub-reviews to the final verdict. Use when driving or setting up a full code review.
+license: MIT
 ---
 
 # Code Review Orchestrator

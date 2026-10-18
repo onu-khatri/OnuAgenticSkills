@@ -1,6 +1,7 @@
 ---
 name: onu-quality-performance
-description: Identify and fix performance issues in the target project across the React/Vite client, EF Core persistence, and the ASP.NET Core API. Use when diagnosing slow queries, render bottlenecks, or capacity concerns.
+description: Identify and fix performance issues across the React/Vite client, EF Core persistence, and the ASP.NET Core API. Use when diagnosing slow queries, render bottlenecks, or capacity concerns.
+license: MIT
 ---
 
 # Performance Optimization

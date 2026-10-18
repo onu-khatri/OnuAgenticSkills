@@ -1,6 +1,7 @@
 ---
 name: onu-git-worktrees
 description: Safely create, validate, operate, and clean up isolated Git worktrees for scalable parallel development. Use when parallel work, a clean checkout, or branch isolation is required.
+license: MIT
 ---
 
 # Git Worktrees

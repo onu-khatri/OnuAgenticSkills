@@ -1,6 +1,7 @@
 ---
 name: onu-frontend-guidelines
-description: Build and review the React frontend code in the target project with current architecture, typed data flows, accessible UI states, and proportionate performance practices. Use for feature, component, form, route, or client-data changes.
+description: Build and review React frontend code with current architecture, typed data flows, accessible UI states, and proportionate performance practices. Use when changing a feature, component, form, route, or client-data flow.
+license: MIT
 ---
 
 # Frontend Development Guidelines

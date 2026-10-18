@@ -1,6 +1,7 @@
 ---
 name: onu-backend-security
-description: Implement and review secure backend code for the target project with OWASP-oriented practices around validation, authorization, data handling, logging, and abuse resistance. Use when Codex is changing APIs, persistence flows, auth-sensitive logic, or other backend attack surfaces.
+description: Implement and review secure backend code with OWASP-oriented practices around validation, authorization, data handling, logging, and abuse resistance. Use when changing APIs, persistence flows, auth-sensitive logic, or other backend attack surfaces.
+license: MIT
 ---
 
 # Backend Security Coder

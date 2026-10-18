@@ -1,6 +1,7 @@
 ---
 name: onu-git-commit
-description: Create small, conventional, traceable commits in the target project with safe staging, validation, and push handoffs. Use when selecting commit boundaries, writing commit messages, committing, or pushing.
+description: Create small, conventional, traceable commits with safe staging, validation, and push handoffs. Use when selecting commit boundaries, writing commit messages, committing, or pushing.
+license: MIT
 ---
 
 # Git Commit

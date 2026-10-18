@@ -1,6 +1,7 @@
 ---
 name: onu-delivery-full-stack-feature
-description: Coordinate full-stack feature delivery in the target project across requirements, frontend, API, service layer, persistence, tests, and PR packaging. Use when Codex needs to drive an end-to-end feature from story to review-ready implementation.
+description: Coordinate full-stack feature delivery across requirements, frontend, API, service layer, persistence, tests, and PR packaging. Use when driving an end-to-end feature from story to review-ready implementation.
+license: MIT
 ---
 
 # Full Stack Feature Orchestrator

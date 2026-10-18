@@ -8,6 +8,7 @@ const DEFAULT_ARGS = {
   agents: null,
   model: null,
   registerAgents: null,
+  includeInstructions: null,
   repository: null,
   ref: null,
   localSource: null,
@@ -37,6 +38,8 @@ Install options:
   --no-agents           Skip agent installation
   --register-agents     Register installed agents in the vendor instruction file
   --no-register-agents  Do not register agents in the instruction file
+  --include-instructions     Inject the full instruction file (agents/AGENTS.md) into the instruction file
+  --no-include-instructions  Do not inject the instruction file
   --model <id>          Model to set on generated agents (leave blank to omit)
   --dry-run             Fetch and show the plan without writing skill files
   -h, --help            Show this help
@@ -82,6 +85,10 @@ export function parseArgs(argv) {
       args.registerAgents = true;
     } else if (arg === '--no-register-agents') {
       args.registerAgents = false;
+    } else if (arg === '--include-instructions') {
+      args.includeInstructions = true;
+    } else if (arg === '--no-include-instructions') {
+      args.includeInstructions = false;
     } else if (arg === '--model') {
       args.model = valueAfter(i, arg).trim() || null;
       i += 1;

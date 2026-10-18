@@ -1,8 +1,9 @@
 ---
 name: onu-implementation-planner
-description: Create approval-gated implementation plans for a single task or a coherent task batch — OpenSpec or plain-language — using project knowledge over existing code, with evidence, dependencies, validation, and focused code snippets.
+description: Create approval-gated implementation plans for a single task or a coherent batch, using project knowledge over existing code. Use when a change needs an implementation-ready plan before any production edit.
 reasoningEffort: medium
 sandboxMode: workspace-write
+mode: subagent
 ---
 
 ## Role

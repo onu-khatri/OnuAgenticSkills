@@ -1,6 +1,7 @@
 ---
 name: onu-documentation-professional-writing
-description: Turn real software-project learnings into professional ~5-minute Medium articles in a practical, example-driven style while preventing leakage of proprietary project code, identifiers, architecture, or business context.
+description: Turn real project learnings into professional ~5-minute Medium articles in a practical, example-driven style while preventing leakage of proprietary code, identifiers, architecture, or business context. Use when writing an article from project experience.
+license: MIT
 ---
 
 # Real Project Medium Writer

@@ -1,6 +1,7 @@
 ---
 name: onu-security-management
-description: Apply OWASP-oriented secure design and secure coding guidance to the target project across frontend, backend, authentication, persistence, and AI-adjacent flows. Use when Codex needs to assess, implement, or review security-sensitive changes in this project.
+description: Apply OWASP-oriented secure design and coding guidance across frontend, backend, authentication, persistence, and AI-adjacent flows. Use when assessing, implementing, or reviewing security-sensitive changes.
+license: MIT
 ---
 
 # Security Manager

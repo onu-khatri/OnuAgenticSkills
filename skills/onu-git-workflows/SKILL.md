@@ -1,6 +1,7 @@
 ---
 name: onu-git-workflows
-description: Apply safe, scalable Git workflows for the target project, including branch synchronization, history cleanup, cherry-pick, bisect, reflog recovery, conflict handling, and branch hygiene.
+description: Apply safe, scalable Git workflows including branch synchronization, history cleanup, cherry-pick, bisect, reflog recovery, conflict handling, and branch hygiene. Use when a history or branch operation is needed.
+license: MIT
 ---
 
 # Git Workflows

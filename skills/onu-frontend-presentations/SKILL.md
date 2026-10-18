@@ -1,6 +1,7 @@
 ---
 name: onu-frontend-presentations
-description: Create presentation-ready frontend walkthroughs, implementation summaries, and UI narratives for the target project. Use when Codex needs to turn frontend work into stakeholder-friendly slides, demos, or visual explanations.
+description: Create presentation-ready frontend walkthroughs, implementation summaries, and UI narratives. Use when turning frontend work into stakeholder-facing slides, demos, or visual explanations.
+license: MIT
 ---
 
 # Frontend Slides

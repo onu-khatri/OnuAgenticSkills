@@ -1,6 +1,7 @@
 ---
 name: onu-skill-discovery
 description: Discover and inspect installed skills. Use when you need to determine which skills are available or find one relevant to a task.
+license: MIT
 ---
 
 # Skill discovery

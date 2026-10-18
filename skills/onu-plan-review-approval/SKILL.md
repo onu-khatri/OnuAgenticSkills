@@ -1,9 +1,10 @@
 ---
 name: onu-plan-review-approval
-description: Review plans created by workflow-planning and automatically approve only plans that meet explicit evidence, completeness, and risk criteria.
+description: Review plans created by workflow-planning and approve only those that meet explicit evidence, completeness, and risk criteria. Use after a plan is produced and before implementation.
 metadata:
   author: the target project
   version: "1.0"
+license: MIT
 ---
 
 # Plan Review and Approval
@@ -30,6 +31,12 @@ Record evidence, confidence, gaps, and actionable findings for:
 - dependencies, sequencing, and external prerequisites;
 - breaking changes, compatibility, rollout, rollback, and migration impact;
 - missing steps, decisions, risks, ownership, or handoff evidence.
+
+Inline `file:line` citations, concise assumptions, and referenced
+`<PlanningFileName>.*-evidence.md` companion files satisfy the evidence
+requirement. The absence of an inlined evidence ledger, numbered rule
+inventory, or self-review narrative is not a gap in a code plan produced by
+`$onu-implementation-planning`.
 
 ## Automatic approval
 

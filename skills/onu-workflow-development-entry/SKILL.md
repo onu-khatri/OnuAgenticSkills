@@ -1,6 +1,6 @@
 ---
 name: onu-workflow-development-entry
-description: Gate any development-related work in the target project before code changes by reconstructing current state, classifying the delivery shape, and routing the minimum backend, frontend, architecture, security, research, and verification skills. Do not use it for documentation-only work.
+description: Gate development work before any code change by reconstructing current state, classifying the delivery shape, and routing the minimum required skills. Use for any development-related request, not for documentation-only work.
 license: MIT
 ---
 
@@ -18,7 +18,28 @@ The gate must finish before an implementation agent, branch, worktree, or code e
 
 ## Gate A: establish the request and evidence
 
-Read `AGENTS.md` and the knowledge-base index (via $onu-documentation-finder) first. For issue-driven work, also read the selected GitHub issue and its source story pack. For direct development requests, identify the stated outcome, acceptance behavior, target area, and requested delivery boundary.
+If OpenSpec is installed — the `openspec` CLI is available, the `openspec-*`
+workflow skills are present in the skill-discovery roots, or
+`openspec/config.yaml` exists — every development request is OpenSpec-driven and
+routes to `$onu-openspec-orchestration` (and `$onu-openspec-workflow` for the
+worktree/approval/closeout mechanics), whether or not an
+`openspec/changes/<name>/` already exists. Two exceptions take the plain
+development path instead, and the reason is recorded:
+
+- the user explicitly requests a plain edit (e.g., "no OpenSpec", "quick edit");
+  or
+- the change is a single, obvious, low-risk edit with no design, contract,
+  persistence, or cross-cutting decision.
+
+Documentation- and research-only requests are not OpenSpec-driven.
+
+Read `AGENTS.md` and the knowledge-base index (via $onu-documentation-finder)
+first, and record which authorities actually exist — repo-root `AGENTS.md`,
+`agents/AGENTS.md`, the user-level vendor instruction file, and
+`KnowledgeBase/INDEX.md` — each as found or "not found"; never silently assume
+one exists. For issue-driven work, also read the selected GitHub issue and its
+source story pack. For direct development requests, identify the stated
+outcome, acceptance behavior, target area, and requested delivery boundary.
 
 Inspect the current implementation and closest tests before routing. Check `git status --short` and preserve unrelated user changes. Resolve the actual project, client, route, module, test-project, and configuration paths from the checkout; do not rely on stale paths or pasted stack assumptions.
 
@@ -30,7 +51,9 @@ Record:
 - affected layers, modules, routes, contracts, persistence, and tests;
 - existing behavior and closest implementation pattern;
 - dependency, migration, shared-contract, shared-UI, and worktree conflicts;
-- verification commands appropriate to the affected area; and
+- verification commands appropriate to the affected area;
+- unbuildable or orphaned test projects that cannot compile, reported as a
+  first-class signal rather than silently omitted; and
 - unresolved product, audience, entitlement, security, contract, architecture, or rollout decisions.
 
 If a material decision cannot be answered from the request, repository, story, or authoritative linked evidence, route `$onu-workflow-user-interview` before implementation. If the evidence gap is significant or cross-cutting, route `$onu-research-deep` first. Do not invent a decision merely to pass the gate.
@@ -79,7 +102,7 @@ For research/planning shape, route `$onu-research-deep`, `$onu-workflow-user-int
 
 Return `PASS` only when the requested behavior, ownership, dependencies, required specialist route, implementation owner, and proportionate verification are clear, with no unresolved blocking decision. Return `BLOCKED` when evidence, approval, dependency, or a required capability is missing. Issue/story traceability is a blocker only for issue- or story-driven work; a plain-language development request does not require a user story, GitHub issue, or OpenSpec change. Include the exact missing item and the next safe action.
 
-The gate does not replace approval checkpoints owned by `$onu-delivery-issues-kickoff`, `$onu-delivery-user-story-kickoff`, `$onu-openspec-workflow`, OpenSpec, or the user. For issue execution, a PASS is necessary but not sufficient: `$onu-openspec-workflow` must still obtain proposal approval and the user's worktree-creation confirmation before a worktree or implementation agent is created. For a direct development request (no issue, story, or OpenSpec change), a PASS is sufficient to hand off to the routed implementation workflow; OpenSpec is optional and must not be imposed.
+The gate does not replace approval checkpoints owned by `$onu-delivery-issues-kickoff`, `$onu-delivery-user-story-kickoff`, `$onu-openspec-workflow`, OpenSpec, or the user. For issue execution, a PASS is necessary but not sufficient: `$onu-openspec-workflow` must still obtain proposal approval and the user's worktree-creation confirmation before a worktree or implementation agent is created. For a development request where OpenSpec is not installed or where a Gate-A exception applies, a PASS is sufficient to hand off to the routed implementation workflow; do not impose OpenSpec in those cases.
 
 ## Required output
 
@@ -96,6 +119,17 @@ Decisions: <confirmed decisions and explicit assumptions>
 Conflicts/dependencies: <none or exact details>
 Verification: <commands and boundary coverage>
 Next action: <one safe action; for PASS, hand off to the approved implementation workflow>
+```
+
+Append a machine-readable state snapshot so the driver never re-derives state
+with manual read/grep/bash calls:
+
+```text
+Authorities: {AGENTS.md, agents/AGENTS.md, user-level instruction file, KnowledgeBase/INDEX.md → found|not-found}
+Build: {<solution/project>: pass|fail|<n> errors}
+Tests: {<project>: <passed>/<failed>/<skipped>}
+Unbuildable/orphaned projects: <none|list>
+External deps: <feeds, services, registries, required credentials|none>
 ```
 
 Never report implementation, agent delegation, branch creation, or verification success from this gate. Those belong to the downstream workflow that actually performs them.

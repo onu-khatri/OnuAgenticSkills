@@ -1,8 +1,9 @@
 ---
 name: onu-knowledge-researcher
-description: Focused research agent for architecture, feature traces, and reusable project knowledge.
+description: Research architecture, feature traces, and reusable project knowledge as a focused evidence lane. Use when delegated to gather evidence or build durable knowledge.
 reasoningEffort: medium
 sandboxMode: workspace-write
+mode: subagent
 ---
 
 ## Mission and authority

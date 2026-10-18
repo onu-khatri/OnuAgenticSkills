@@ -1,6 +1,7 @@
 ---
 name: onu-frontend-security
-description: Implement and review secure frontend behavior in the target project with attention to auth flow, data exposure, user input handling, DOM safety, redirects, and safe API interaction. Use when Codex is changing client-side behavior with security or privacy implications.
+description: Implement and review secure frontend behavior with attention to auth flow, data exposure, user input handling, DOM safety, redirects, and safe API interaction. Use when changing client-side behavior with security or privacy implications.
+license: MIT
 ---
 
 # Frontend Security Coder

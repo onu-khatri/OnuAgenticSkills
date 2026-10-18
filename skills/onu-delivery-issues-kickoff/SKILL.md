@@ -1,6 +1,7 @@
 ---
 name: onu-delivery-issues-kickoff
-description: When explicitly invoked, find up to five ready-to-implement GitHub issues in the target project through MCP, persist selected issue context locally, collect an optional search brief, and coordinate selected issue implementation through PR readiness.
+description: Find ready-to-implement GitHub issues through MCP, persist selected issue context locally, and coordinate their implementation through PR readiness. Use when explicitly invoked to kick off issue-driven delivery.
+license: MIT
 ---
 
 # Issues Kickoff

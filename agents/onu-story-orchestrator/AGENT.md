@@ -1,8 +1,9 @@
 ---
 name: onu-story-orchestrator
-description: "Coordinator for multi-story delivery: readiness assessment, dependency ordering, parallel-group planning, and review-ready handoff."
+description: Coordinate multi-story delivery through readiness assessment, dependency ordering, parallel-group planning, and review-ready handoff. Use when delivering multiple related stories.
 reasoningEffort: medium
 sandboxMode: workspace-write
+mode: all
 ---
 
 ## Mission and routing
@@ -15,7 +16,9 @@ Use the canonical delegated-work protocol at
 `$onu-orchestration-agent-improvement` (`references/delegation-protocol.md`)
 for every delegated lane. Assign `parent_step_id`, reconcile lifecycle events,
 emit and consume the full canonical envelope, acknowledge terminal results, and
-keep final synthesis with the parent.
+keep final synthesis with the parent. Track each lane's `reserved_name` and
+`visible_name`; report progress and handoffs under `visible_name`, and release
+`reserved_name` when the lane closes.
 
 ## Dependency and plan coordination
 

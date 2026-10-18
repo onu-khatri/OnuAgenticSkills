@@ -1,6 +1,7 @@
 ---
 name: onu-frontend-design
-description: Design polished, intentional interfaces for the target project that fit the product domain, existing implementation patterns, and accessibility expectations. Use when Codex needs to shape layout, hierarchy, copy, and interaction design before or during frontend implementation.
+description: Design polished, intentional interfaces that fit the product domain, existing implementation patterns, and accessibility expectations. Use when shaping layout, hierarchy, copy, and interaction design before or during frontend implementation.
+license: MIT
 ---
 
 # Frontend Design

@@ -1,6 +1,7 @@
 ---
 name: onu-documentation-generation
-description: "Generate accurate, project-grounded documentation for the target project: code explainers, API references, module guides, ADRs, and onboarding notes. Use when creating or updating docs from repository evidence."
+description: Generate accurate, project-grounded documentation — code explainers, API references, module guides, ADRs, and onboarding notes. Use when creating or updating docs from repository evidence.
+license: MIT
 ---
 
 # Documentation Generator

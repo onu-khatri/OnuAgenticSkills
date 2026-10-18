@@ -18,6 +18,7 @@ try {
     '--scope', 'project',
     '--agents',
     '--force',
+    '--include-instructions',
   ], { cwd: projectDir, encoding: 'utf8', stdio: 'inherit' });
 
   if (result.error) throw result.error;
@@ -61,6 +62,17 @@ try {
   }
   if (!fs.existsSync(claudeMd) || !fs.readFileSync(claudeMd, 'utf8').includes('onu-code-reviewer')) {
     throw new Error('Agent registration was not written to CLAUDE.md.');
+  }
+
+  const instructionsBegin = '<!-- BEGIN onu-agentic-workshop:instructions -->';
+  if (!fs.readFileSync(agentsMd, 'utf8').includes(instructionsBegin)) {
+    throw new Error('Instruction file content was not written to AGENTS.md.');
+  }
+  if (!fs.readFileSync(claudeMd, 'utf8').includes(instructionsBegin)) {
+    throw new Error('Instruction file content was not written to CLAUDE.md.');
+  }
+  if (!fs.readFileSync(agentsMd, 'utf8').includes('# Agent Instructions')) {
+    throw new Error('Instruction file content was missing its body in AGENTS.md.');
   }
 
   console.log('Local working-tree installer test passed.');

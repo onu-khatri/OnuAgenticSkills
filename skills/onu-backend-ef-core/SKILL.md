@@ -1,6 +1,7 @@
 ---
 name: onu-backend-ef-core
 description: Design and review EF Core persistence changes with explicit schema, query, transaction, migration, initialization, and verification decisions. Use when a backend change has meaningful persistence impact.
+license: MIT
 ---
 
 # EF Core Database Architect

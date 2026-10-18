@@ -1,6 +1,7 @@
 ---
 name: onu-architecture-domain-modeling
 description: Apply pragmatic domain modeling to clarify business language, context boundaries, invariants, and model responsibilities. Use when business complexity materially affects architecture or behavior.
+license: MIT
 ---
 
 # Domain Modeling

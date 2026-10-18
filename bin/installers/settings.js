@@ -47,5 +47,6 @@ export function loadSettings(args) {
     agentsPath,
     preferSharedPathForMultipleClients: settings.install?.preferSharedPathForMultipleClients !== false,
     registerAgentsInInstructions: settings.install?.registerAgentsInInstructions !== false,
+    includeInstructionFile: settings.install?.includeInstructionFile === true,
   };
 }

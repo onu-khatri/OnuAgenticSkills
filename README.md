@@ -40,7 +40,8 @@ Edit `installer.config.json` before publishing the npm installer:
   },
   "install": {
     "preferSharedPathForMultipleClients": true,
-    "registerAgentsInInstructions": true
+    "registerAgentsInInstructions": true,
+    "includeInstructionFile": false
   }
 }
 ```
@@ -168,6 +169,13 @@ Behavior is controlled by `registerAgentsInInstructions` (default `true`) and th
 
 The injected section is wrapped in `<!-- BEGIN onu-agentic-workshop:agents -->` / `<!-- END onu-agentic-workshop:agents -->` markers and is clearly labelled as auto-generated. On reinstall, the installer replaces only that marked section, preserving any other content the user has written in the file. When Codex, Copilot, and OpenCode all target the same `AGENTS.md`, it is written once. The repository's `agents/AGENTS.md` is a separate, user-owned instruction file and is never auto-appended or overridden.
 
+In addition to the short catalog, the installer can optionally inject the full repository instruction file (`agents/AGENTS.md`) into the same instruction files, wrapped in its own marked section (`<!-- BEGIN onu-agentic-workshop:instructions -->` / `<!-- END onu-agentic-workshop:instructions -->`). This is opt-in and controlled by `install.includeInstructionFile` (default `false`) and the `--include-instructions` / `--no-include-instructions` flags:
+
+- `includeInstructionFile` is `true`, or `--include-instructions` is passed → the full instruction file content is written as a separate marked section, alongside (not replacing) the catalog block.
+- `includeInstructionFile` is `false` (default) → the instruction file content is not injected.
+
+On reinstall, only the marked instructions section is replaced, preserving any content outside it. If the source repository has no `agents/AGENTS.md`, the instructions section is skipped.
+
 ## Overriding agents in the autonomous flow
 
 The installed `onu-*` agents are defaults, not fixed bindings. In your project's `AGENTS.md` you can name your own agent for any role in the autonomous development loop; your explicit routing takes priority over the installed agent catalog.
@@ -286,6 +294,8 @@ Options:
 --no-agents           Skip agent installation
 --register-agents     Register installed agents in the vendor instruction file
 --no-register-agents  Do not register agents in the instruction file
+--include-instructions     Inject the full instruction file (agents/AGENTS.md) into the instruction file
+--no-include-instructions  Do not inject the instruction file
 --model <id>          Model to set on generated agents (leave blank to omit)
 --force               Replace existing skills without prompting
 --dry-run             Fetch and preview without writing skill files

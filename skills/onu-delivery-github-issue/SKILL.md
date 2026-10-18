@@ -1,6 +1,7 @@
 ---
 name: onu-delivery-github-issue
-description: Create one traceable GitHub issue from an approved local user story in the target project, then mark the source story as moved to GitHub only after the issue and source update both succeed.
+description: Create one traceable GitHub issue from an approved local user story, then mark the source story as moved only after both the issue and the source update succeed. Use when converting an approved story into a GitHub issue.
+license: MIT
 ---
 
 # Create GitHub Issue

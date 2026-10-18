@@ -1,6 +1,7 @@
 ---
 name: onu-quality-refactoring
-description: Reduce technical debt in the target project through scoped refactoring that preserves behavior while improving structure, duplication, and maintainability. Use when Codex needs to clean up existing code, prepare for new features, or address architectural friction.
+description: Reduce technical debt through scoped refactoring that preserves behavior while improving structure, duplication, and maintainability. Use when cleaning up existing code, preparing for new features, or addressing architectural friction.
+license: MIT
 ---
 
 # Code Refactoring Tech Debt

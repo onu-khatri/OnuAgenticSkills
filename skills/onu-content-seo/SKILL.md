@@ -1,6 +1,7 @@
 ---
 name: onu-content-seo
-description: "Write SEO-optimized content for the target project public pages: landing, marketing, public content discovery, and help documentation. Use when creating content that needs search visibility."
+description: Write SEO-optimized content for public pages — landing, marketing, discovery, and help documentation. Use when creating content that needs search visibility.
+license: MIT
 ---
 
 # SEO Content Writer

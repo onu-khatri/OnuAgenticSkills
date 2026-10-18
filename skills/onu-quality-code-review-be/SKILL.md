@@ -1,6 +1,7 @@
 ---
 name: onu-quality-code-review-be
-description: 'Composable .NET backend code-review capability for production readiness. Use for autonomous review of .cs/.csproj/.sln/appsettings changes, or anything touching persistence (EF Core), domain, API surface, DI, messaging, configuration, or shared backend libraries. Owns backend methodology only; not for frontend, docs, or general clean-code review.'
+description: Review .NET backend changes for production readiness. Use for autonomous review of .cs/.csproj/.sln/appsettings changes, persistence (EF Core), domain, API surface, DI, messaging, configuration, or shared backend libraries.
+license: MIT
 ---
 
 # .NET Backend Code Review Capability

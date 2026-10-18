@@ -41,3 +41,7 @@ Stop and self-correct:
 ## Compliance over availability
 
 When a rule assigns a responsibility to a component, place it there — even if that component does not yet expose the capability. "It already has the dependencies" or "a similar file does it this way" is not a reason to place logic elsewhere.
+
+## Output destination
+
+The numbered rules inventory is working evidence, not plan content. Write it to `<PlanningFileName>.pre-plan-evidence.md`; persist only `(rule N)` citations inline in the plan's `Changes` section.

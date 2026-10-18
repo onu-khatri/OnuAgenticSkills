@@ -1,6 +1,7 @@
 ---
 name: onu-workflow-user-interview
-description: Resolve material scope and design decisions through a repository-first interview using native question tool when available.
+description: Resolve material scope and design decisions through a repository-first interview using the native question tool when available. Use when a decision cannot be answered from the repository and needs user input.
+license: MIT
 ---
 
 # User Interview

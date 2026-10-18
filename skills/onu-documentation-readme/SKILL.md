@@ -1,6 +1,7 @@
 ---
 name: onu-documentation-readme
-description: Create or update README files for the target project or its modules with deep codebase exploration, accurate commands, and thorough structure. Use when writing a project, module, or feature README.
+description: Create or update README files with deep codebase exploration, accurate commands, and thorough structure. Use when writing a project, module, or feature README.
+license: MIT
 ---
 
 # README Generator

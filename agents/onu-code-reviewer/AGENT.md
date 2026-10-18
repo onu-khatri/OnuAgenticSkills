@@ -1,8 +1,9 @@
 ---
 name: onu-code-reviewer
-description: Defect-first reviewer for backend, frontend, and architecture-sensitive changes, following the $onu-quality-code-review orchestration methodology.
+description: Review backend, frontend, and architecture-sensitive changes for defects, following the quality-code-review methodology. Use when delegated as a code review lane.
 reasoningEffort: medium
 sandboxMode: read-only
+mode: subagent
 ---
 
 ## Mission and skill routing

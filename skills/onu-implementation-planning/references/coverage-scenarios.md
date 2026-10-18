@@ -24,6 +24,10 @@ A single happy path is insufficient whenever the logic also contains guards, thr
 
 Represent unit-test planning only through the coverage scenarios in each file detail. Do not add unit-test files or operations to the plan unless the user explicitly asks for a broader test-delivery plan.
 
+## Output destination
+
+Enumerate coverage scenarios in working memory; persist them only as a compact list in the file's `Done when` field or as a short bullet list under `Validation`. Do not add a standalone `## Coverage scenarios` section.
+
 ## Unit-test-only planning
 
 When the request is specifically to plan unit tests for existing production code and the plan introduces no production-code edit for that file, mark the production file as unmodified, show the existing code under test as read-only context, and include no executable step for that file.

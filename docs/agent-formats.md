@@ -139,3 +139,5 @@ The catalog is injected as a marked, idempotent section:
 ```
 
 On reinstall, only the marked section is replaced, preserving any other content. Vendors that share an instruction file (Codex, Copilot, and OpenCode all use `AGENTS.md`) are written once.
+
+Separately, the installer can inject the full repository instruction file (`agents/AGENTS.md`) into the same instruction files as its own marked section (`<!-- BEGIN onu-agentic-workshop:instructions -->` / `<!-- END onu-agentic-workshop:instructions -->`). This is opt-in via `install.includeInstructionFile` (default `false`) or the `--include-instructions` / `--no-include-instructions` flags. The instructions section is written alongside the catalog block and, like the catalog, is replaced in place on reinstall. If the source has no `agents/AGENTS.md`, the section is skipped.
